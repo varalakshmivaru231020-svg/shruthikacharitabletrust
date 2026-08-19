@@ -536,7 +536,7 @@ strong { color: var(--maroon); font-weight: 700; }
   inset: -8% 0 0;
   height: 116%;
   z-index: -2;
-  background-image: url("/assets/img/hero.jpg"),
+  background-image: url("/assets/img/children.jpg"),
     linear-gradient(135deg, #b4531f 0%, #7a2410 45%, #43170a 100%);
   background-size: cover;
   background-position: center 32%;
