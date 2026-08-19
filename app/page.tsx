@@ -175,8 +175,8 @@ export default function Home() {
       </article>
 
       <article className="service" data-reveal="scale" style={{ "--d": "0" } as React.CSSProperties}>
-      <div className="service__icon" aria-hidden="true">
-      <img src="/assets/img/icons/patient-care.png" alt="Hands holding a heart" width="40" height="40" loading="lazy" />
+      <div className="service__icon service__icon--photo" aria-hidden="true">
+      <img src="/assets/img/services/patient-care.jpg" alt="" width="68" height="68" loading="lazy" />
       </div>
       <h3>Patient Care</h3>
       <p>Attendants &amp; caregivers</p>
