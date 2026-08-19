@@ -417,27 +417,39 @@ strong { color: var(--maroon); font-weight: 700; }
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.92);
   border-radius: 99px;
+  overflow: hidden;
+  isolation: isolate;
   transition: color 0.35s var(--ease);
 }
-.nav a::after {
+/* Same wipe as .btn::before, so a nav item and a button answer the pointer
+   the same way. -101% rather than -100% hides the hairline that shows at
+   fractional device pixel ratios. */
+.nav a::before {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: 2px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+  inset: 0;
   background: var(--saffron);
-  transform: translate(-50%, 6px) scale(0);
-  transition: transform 0.4s var(--ease);
+  border-radius: inherit;
+  transform: translateX(-101%);
+  transition: transform 0.45s var(--ease);
+  z-index: -1;
 }
-.nav a:hover::after,
-.nav a[aria-current="page"]::after { transform: translate(-50%, 0) scale(1); }
+.nav a:hover::before,
+.nav a[aria-current="page"]::before { transform: translateX(0); }
 .header.is-stuck .nav a,
 .header--solid .nav a { color: var(--ink); }
-.nav a:hover { color: var(--saffron-deep); }
+/* White wins on saffron in every header state, so the filled pill keeps
+   its contrast whether the header is transparent or solid. */
+.nav a:hover,
+.nav a[aria-current="page"],
+.header.is-stuck .nav a:hover,
 .header.is-stuck .nav a[aria-current="page"],
-.header--solid .nav a[aria-current="page"] { color: var(--saffron-deep); }
+.header--solid .nav a:hover,
+.header--solid .nav a[aria-current="page"] { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a::before { transition: none; }
+}
 
 .header__cta { flex: none; }
 .header__cta .btn { padding: 0.8rem 1.5rem; font-size: 0.92rem; }
@@ -754,6 +766,17 @@ strong { color: var(--maroon); font-weight: 700; }
 .frame:hover img { transform: scale(1.06); }
 .frame--tall { aspect-ratio: 3 / 4; }
 .frame--wide { aspect-ratio: 16 / 11; }
+
+/* An emblem is already a finished piece of artwork on its own white ground.
+   Putting it in a .frame would crop the ring of lettering that runs round
+   its edge, so it is shown whole with no plate, shadow or aspect box. */
+.emblem {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  margin-inline: auto;
+}
 
 .frame-outline {
   position: absolute;

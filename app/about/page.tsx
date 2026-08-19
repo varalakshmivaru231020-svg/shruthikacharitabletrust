@@ -42,11 +42,8 @@ export default function AboutPage() {
       {/* ============ Our story ============ */}
       <section className="section section--cream" id="story">
       <div className="shell split split--wide-right">
-      <div className="split__media media-cluster" data-reveal="left">
-      <div className="frame frame--tall">
-      <img src="/assets/img/founder.jpg" alt="Lion Dr. S. Sathish, Founder President of the Shruthika Women's and Children's Welfare Trust" loading="lazy" />
-      </div>
-      <span className="frame-outline" aria-hidden="true"></span>
+      <div className="split__media" data-reveal="left">
+      <img className="emblem" src="/assets/img/founder.jpg" alt="Lion Dr. S. Sathish, Founder President of the Shruthika Women's and Children's Welfare Trust" loading="lazy" />
       </div>
 
       <div className="split__body">
@@ -73,9 +70,6 @@ export default function AboutPage() {
       </div>
 
       <div className="founder-card" data-reveal="" style={{ "--d": "240" } as React.CSSProperties}>
-      <div className="founder-card__avatar">
-      <img src="/assets/img/founder-avatar.jpg" alt="" loading="lazy" />
-      </div>
       <div>
       <span>Founder President</span>
       <b>Lion Dr. S. Sathish</b>
