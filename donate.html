@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate – Shruthika Women's & Children's Welfare Trust</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header / Navbar */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            border-top: 2px solid #ffffff;
+        }
+
+        /* Hero / Donation Purpose Section */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('assets/img/banner-donate.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            color: #ffffff;
+        }
+
+        .donation-subtitle {
+            color: #ff5722;
+            font-family: 'Caveat', cursive, sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .bank-details-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bank-details-box h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 35px;
+            letter-spacing: -0.5px;
+        }
+
+        .donate-btn {
+            background-color: #f25c38;
+            color: #ffffff;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(242, 92, 56, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .donate-btn:hover {
+            background-color: #e04b27;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(242, 92, 56, 0.5);
+        }
+
+        .donate-btn i {
+            font-size: 1.1rem;
+        }
+
+        .hero-scroll-btn {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: 44px;
+            height: 44px;
+            background-color: #1b2a59;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        .hero-scroll-btn:hover {
+            background-color: #283c7a;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            background-color: #fcf8f2;
+            padding: 70px 20px 90px;
+            position: relative;
+        }
+
+        .qr-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .qr-title {
+            color: #8b2318;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .qr-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+        }
+
+        .qr-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .section-scroll-btn {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: 44px;
+            height: 44px;
+            background-color: #1b2a59;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #150e0b;
+            color: #cccccc;
+            padding: 60px 40px 20px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .footer-col p,
+        .footer-col address {
+            font-style: normal;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #b0a8a0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #b0a8a0;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background-color: #241a16;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #f25c38;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #281d19;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        .back-to-top {
+            width: 40px;
+            height: 40px;
+            background-color: #2a3c75;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #3b5299;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .header {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                gap: 12px;
+            }
+            .bank-details-box h1 {
+                font-size: 2rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .qr-title {
+                font-size: 1.8rem;
+            }
+            .bank-details-box h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Shruthika Trust Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="causes.html">Our Causes</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="donate.html" class="active">Donate</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero / Donation Section -->
+    <section class="hero">
+        <div class="bank-details-box">
+            <div class="donation-subtitle">FOR DONATION PURPOSE</div>
+            <h1>
+                Bank A/c No. 39783628220<br>
+                State Bank of India<br>
+                Kacharakanahalli Branch<br>
+                Bangalore, Karnataka, INDIA.
+            </h1>
+            <a href="#qr-section" class="donate-btn">
+                Make a Donation <i class="fa-solid fa-heart"></i>
+            </a>
+        </div>
+        <a href="#qr-section" class="hero-scroll-btn" aria-label="Scroll down">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-section" id="qr-section">
+        <div class="qr-container">
+            <h2 class="qr-title">Scan the QR Code to Donate</h2>
+            <div class="qr-grid">
+                <div class="qr-card">
+                    <img src="assets/img/qr-2.png" alt="Donation Poster Details">
+                </div>
+                <div class="qr-card">
+                    <img src="assets/img/qr-1.png" alt="Shruthika Welfare Trust UPI QR Code">
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="section-scroll-btn" aria-label="Scroll top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Contact Us -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p style="margin-bottom: 12px;">shruthikacharitabletrust2@gmail.com</p>
+                <p><strong>+91 7899915832</strong></p>
+                <p><strong>+91 9663714362</strong></p>
+            </div>
+
+            <!-- Office -->
+            <div class="footer-col">
+                <h3>Office</h3>
+                <address>
+                    No.356 & 358, GNR East Tower, 7th<br>
+                    Main Road, Near Shiva Parvathi<br>
+                    Kalyana Mantapa,OMBR Layout,<br>
+                    Banaswadi, Bangalore – 560 043,<br>
+                    KARNATAKA, INDIA
+                </address>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-col">
+                <h3>Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="causes.html">Our Causes</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Get In Touch -->
+            <div class="footer-col">
+                <h3>Get In Touch</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>SWCWT © 2026. All Rights Reserved.</div>
+            <a href="#" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
